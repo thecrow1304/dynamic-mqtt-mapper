@@ -1,20 +1,19 @@
+
 FROM python:3.11-slim
 
 WORKDIR /app
 
-# kopiert den Ordner mqtt_mapper (mit __init__.py) in /app/mqtt_mapper
+# Copy backend
 COPY mqtt_mapper ./mqtt_mapper
 
-# statische Web-UI
+# Copy web UI (static, no build step required)
 COPY webui ./webui
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY run.sh .
-RUN sed -i 's/\r$//' /app/run.sh && chmod +x /app/run.sh
+RUN chmod +x /app/run.sh
 
 EXPOSE 8080
-
-# Fallback: starte immer im Paketkontext
-CMD ["python3", "-m", "mqtt_mapper.webserver"]
+CMD ["/app/run.sh"]
