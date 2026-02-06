@@ -1,6 +1,6 @@
 {
   "name": "Dynamic MQTT Entity Mapper",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "slug": "dynamic_mqtt_mapper",
   "description": "Automatische Erstellung von Geräten & Entitäten aus MQTT Payloads mit komfortabler Web-UI.",
   "startup": "services",
