@@ -1,0 +1,33 @@
+
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dynamic MQTT Entity Mapper</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Dynamic MQTT Entity Mapper</h1>
+    <div class="toolbar">
+      <input id="search" type="search" placeholder="Suche nach Geräte-ID, Alias oder Entität…" />
+      <select id="typeFilter">
+        <option value="">Alle Gerätetypen</option>
+      </select>
+      <button id="refreshBtn" title="Neu laden">⟲ Aktualisieren</button>
+    </div>
+  </header>
+
+  <main>
+    <div id="stats" class="stats"></div>
+    <div id="devices" class="grid"></div>
+  </main>
+
+  <footer>
+    <small>Stand: <span id="ts"></span></small>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
