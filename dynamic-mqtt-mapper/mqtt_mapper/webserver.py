@@ -3,9 +3,10 @@ import os
 import uvicorn
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
-from .device_manager import devices
-from .mqtt_client import start_mqtt
-from .settings import LOGGER
+from mqtt_mapper.device_manager import devices
+from mqtt_mapper.mqtt_client import start_mqtt
+from mqtt_mapper.settings import LOGGER
+
 
 app = FastAPI(title="Dynamic MQTT Mapper API")
 
