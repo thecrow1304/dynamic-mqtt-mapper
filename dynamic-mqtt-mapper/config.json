@@ -1,0 +1,42 @@
+{
+  "name": "Dynamic MQTT Entity Mapper",
+  "version": "1.0.1",
+  "slug": "dynamic_mqtt_mapper",
+  "description": "Automatische Erstellung von Geräten & Entitäten aus MQTT Payloads mit komfortabler Web-UI.",
+  "startup": "services",
+  "boot": "auto",
+  "arch": [
+    "amd64",
+    "aarch64"
+  ],
+  "host_network": true,
+  "ingress": true,
+  "ingress_port": 8080,
+  "panel_icon": "mdi:lan",
+  "ports": {
+    "8080/tcp": 8080
+  },
+  "ports_description": {
+    "8080/tcp": "Web Interface"
+  },
+  "hassio_api": true,
+  "homeassistant_api": true,
+  "options": {
+    "mqtt_host": "core-mqtt",
+    "mqtt_port": 1883,
+    "mqtt_username": "",
+    "mqtt_password": "",
+    "mqtt_topic": "physec/#",
+    "discovery_prefix": "homeassistant",
+    "log_level": "INFO"
+  },
+  "schema": {
+    "mqtt_host": "str?",
+    "mqtt_port": "int?",
+    "mqtt_username": "str?",
+    "mqtt_password": "password?",
+    "mqtt_topic": "str?",
+    "discovery_prefix": "str?",
+    "log_level": "list(DEBUG|INFO|WARNING|ERROR)?"
+  }
+}
