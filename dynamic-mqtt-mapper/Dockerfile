@@ -1,3 +1,5 @@
+FROM python:3.11-slim
+
 WORKDIR /app
 
 # kopiert den Ordner mqtt_mapper (mit __init__.py) in /app/mqtt_mapper
