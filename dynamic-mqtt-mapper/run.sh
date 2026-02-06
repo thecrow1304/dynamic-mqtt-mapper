@@ -1,4 +1,4 @@
 
 #!/usr/bin/env bash
-set -e
+set -euo pipefail
 python3 -u mqtt_mapper/webserver.py
